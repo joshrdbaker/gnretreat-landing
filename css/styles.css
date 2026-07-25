@@ -342,7 +342,21 @@ main {
 }
 
 .plan__form {
+  margin-top: var(--space-md);
+}
+
+.plan__form--below {
+  display: none;
   margin-top: var(--space-xl);
+}
+
+.plan-list__item--save .plan__form--inline {
+  grid-column: 1 / -1;
+  max-width: none;
+}
+
+.plan__form--inline .save-form__fields .btn {
+  width: 100%;
 }
 
 .plan-list__item {
@@ -601,6 +615,14 @@ main {
 
   .save-form__fields .btn {
     min-width: 11rem;
+  }
+
+  .plan__form--inline {
+    display: none;
+  }
+
+  .plan__form--below {
+    display: block;
   }
 
   .weekend-grid {

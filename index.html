@@ -122,11 +122,28 @@
       <div class="container">
         <h2 class="plan-title" id="plan-title">It's time to step in.</h2>
         <ol class="plan-list">
-          <li class="plan-list__item">
+          <li class="plan-list__item plan-list__item--save">
             <span class="plan-list__number">1</span>
             <div class="plan-list__content">
               <strong class="plan-list__step">SAVE THE DATE</strong>
               <span class="plan-list__detail">— drop your email so you know the moment registration opens.</span>
+            </div>
+            <div class="form-block plan__form plan__form--inline" data-form-block>
+              <form class="save-form" data-save-form aria-label="Save the date">
+                <div class="save-form__fields">
+                  <label class="save-form__field">
+                    <span class="save-form__label">Name <span class="save-form__optional">(optional)</span></span>
+                    <input type="text" name="name" autocomplete="name" class="save-form__input">
+                  </label>
+                  <label class="save-form__field">
+                    <span class="save-form__label">Email</span>
+                    <input type="email" name="email" required autocomplete="email" class="save-form__input">
+                  </label>
+                  <button type="submit" class="btn btn--primary">Save the date</button>
+                </div>
+                <p class="save-form__hint">We'll email you when registration opens.</p>
+                <p class="save-form__message" role="status" aria-live="polite"></p>
+              </form>
             </div>
           </li>
           <li class="plan-list__item">
@@ -145,7 +162,7 @@
           </li>
         </ol>
 
-        <div class="form-block plan__form" data-form-block>
+        <div class="form-block plan__form plan__form--below" data-form-block>
           <form class="save-form" data-save-form aria-label="Save the date">
             <div class="save-form__fields">
               <label class="save-form__field">
