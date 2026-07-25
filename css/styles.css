@@ -117,9 +117,15 @@ main {
 .hero__meta {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 0.35rem var(--space-sm);
   margin: var(--space-sm) 0 0;
+}
+
+.hero__meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .hero__year {
@@ -138,6 +144,15 @@ main {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.hero__dates {
+  margin: 0;
+  font-size: clamp(0.8125rem, 2vw, 0.9375rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dawn);
 }
 
 .hero__form {
