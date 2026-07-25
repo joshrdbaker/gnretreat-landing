@@ -302,11 +302,9 @@ main {
   font-size: 0.975rem;
 }
 
-.charges-cta {
-  display: flex;
+.charges-cta-wrap {
   margin-top: var(--space-lg);
-  margin-inline: auto;
-  width: fit-content;
+  text-align: center;
 }
 
 /* ── Plan ───────────────────────────────────────────────── */
