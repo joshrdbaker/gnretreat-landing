@@ -1,0 +1,610 @@
+/* GN Men's Retreat 2026 — Take Your Place */
+
+:root {
+  --color-charcoal: #1A1612;
+  --color-cream: #E6E9E1;
+  --color-ember: #B85C43;
+  --color-dawn: #D98356;
+  --color-mid: #4A503D;
+
+  --font-display: "Archivo Black", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  --container: min(100% - 2.5rem, 68rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-charcoal);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+/* ── Hero ─────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  background:
+    url("../images/hero.jpg") center center / cover no-repeat;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 22, 18, 0.92) 0%,
+    rgba(26, 22, 18, 0.72) 42%,
+    rgba(26, 22, 18, 0.35) 68%,
+    rgba(26, 22, 18, 0.15) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 42rem;
+  padding:
+    var(--space-lg)
+    var(--space-md)
+    var(--space-xl)
+    clamp(1.25rem, 8vw, 6rem);
+}
+
+.hero__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 14vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.hero__line {
+  display: block;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem var(--space-sm);
+  margin: var(--space-sm) 0 0;
+}
+
+.hero__year {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-dawn);
+}
+
+.hero__tagline {
+  margin: 0;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero__form {
+  max-width: none;
+  margin-top: var(--space-lg);
+}
+
+/* ── Sections ─────────────────────────────────────────── */
+
+.section {
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--color-mid);
+}
+
+.ask-title {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-dawn);
+}
+
+.label {
+  margin: 0 0 var(--space-md);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dawn);
+}
+
+.body {
+  margin: 0 0 var(--space-lg);
+  max-width: 42rem;
+  font-size: 1.0625rem;
+}
+
+.statement {
+  margin: 0 0 var(--space-lg);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 4.5vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.statement--final {
+  margin-bottom: var(--space-xl);
+}
+
+.statement-link {
+  color: var(--color-dawn);
+  text-decoration: underline;
+  text-decoration-color: rgba(217, 131, 86, 0.65);
+  text-underline-offset: 0.15em;
+}
+
+.statement-link:hover,
+.statement-link:focus-visible {
+  color: var(--color-cream);
+  text-decoration-color: currentColor;
+  outline: none;
+}
+
+.intro {
+  margin: 0 0 var(--space-lg);
+  font-size: 1.0625rem;
+}
+
+/* ── Weekend blocks ─────────────────────────────────────── */
+
+.weekend-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--color-mid);
+  border: 1px solid var(--color-mid);
+}
+
+.block-card {
+  background: var(--color-charcoal);
+  padding: var(--space-md);
+}
+
+.block-card__title {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-dawn);
+}
+
+.block-card__body {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.what-contact {
+  margin: var(--space-lg) 0 0;
+  font-size: 1.0625rem;
+}
+
+.text-link {
+  color: var(--color-dawn);
+  text-decoration: underline;
+  text-decoration-color: rgba(217, 131, 86, 0.45);
+  text-underline-offset: 0.2em;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--color-cream);
+  text-decoration-color: currentColor;
+  outline: none;
+}
+
+.text-link__arrow {
+  text-decoration: none;
+}
+
+/* ── Three charges ──────────────────────────────────────── */
+
+.section--charges .intro {
+  text-align: center;
+}
+
+.charges-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--color-mid);
+  border: 1px solid var(--color-mid);
+}
+
+.charge-card {
+  background: var(--color-charcoal);
+  padding: var(--space-md);
+}
+
+.charge-card__title {
+  margin: 0 0 var(--space-xs);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.charge-card__subtitle {
+  margin: 0 0 var(--space-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dawn);
+}
+
+.charge-card__body {
+  margin: 0;
+  font-size: 0.975rem;
+}
+
+.charges-cta {
+  display: flex;
+  margin-top: var(--space-lg);
+  margin-inline: auto;
+  width: fit-content;
+}
+
+/* ── Plan ───────────────────────────────────────────────── */
+
+.plan-title {
+  margin: 0 0 var(--space-lg);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.plan-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.plan__form {
+  margin-top: var(--space-xl);
+}
+
+.plan-list__item {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: var(--space-sm);
+  align-items: start;
+  padding: var(--space-md);
+  border: 1px solid var(--color-mid);
+}
+
+.plan-list__number {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-dawn);
+}
+
+.plan-list__content {
+  font-size: 1rem;
+}
+
+.plan-list__step {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.plan-list__detail {
+  display: block;
+  margin-top: 0.35rem;
+}
+
+/* ── Scripture ──────────────────────────────────────────── */
+
+.section--scripture {
+  padding: var(--space-2xl) 0;
+}
+
+.scripture {
+  text-align: center;
+}
+
+.scripture__rule {
+  height: 1px;
+  background: var(--color-mid);
+  margin-inline: auto;
+  max-width: 12rem;
+}
+
+.scripture__mark {
+  margin: var(--space-md) 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 7rem);
+  line-height: 0.75;
+  color: var(--color-dawn);
+}
+
+.scripture__quote {
+  margin: var(--space-md) auto 0;
+  padding: 0;
+  max-width: 36rem;
+  font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+  line-height: 1.5;
+}
+
+.scripture__quote p {
+  margin: 0;
+}
+
+.scripture__ref {
+  margin-top: var(--space-md);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dawn);
+}
+
+.scripture__rule:last-child {
+  margin-top: var(--space-lg);
+}
+
+/* ── Form ───────────────────────────────────────────────── */
+
+.form-block {
+  max-width: 36rem;
+}
+
+.save-form__fields {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.save-form--hero .save-form__fields {
+  grid-template-columns: 1fr;
+}
+
+.save-form--hero .save-form__fields .btn {
+  width: 100%;
+}
+
+.save-form--hero .save-form__input,
+.save-form--hero .save-form__action .btn {
+  min-height: 3.25rem;
+  height: 3.25rem;
+}
+
+.save-form__action {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.save-form__label--spacer {
+  display: none;
+}
+
+.save-form__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.save-form__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.save-form__optional {
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: rgba(230, 233, 225, 0.65);
+}
+
+.save-form__input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-mid);
+  border-radius: 0;
+  background: rgba(230, 233, 225, 0.06);
+  color: var(--color-cream);
+}
+
+.save-form__input::placeholder {
+  color: rgba(230, 233, 225, 0.45);
+}
+
+.save-form__input:focus {
+  outline: 2px solid var(--color-dawn);
+  outline-offset: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.5rem;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--color-ember);
+  color: var(--color-cream);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--color-dawn);
+  outline: none;
+}
+
+.save-form__hint {
+  margin: var(--space-sm) 0 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+}
+
+.save-form__message {
+  margin: var(--space-sm) 0 0;
+  min-height: 1.5rem;
+  font-size: 0.9375rem;
+}
+
+.save-form__message.is-error {
+  color: #f0a898;
+}
+
+.save-form__message.is-success {
+  font-weight: 500;
+}
+
+.form-block.is-success .save-form__fields,
+.form-block.is-success .save-form__hint {
+  display: none;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+
+.site-footer {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-mid);
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(230, 233, 225, 0.72);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (min-width: 640px) {
+  .hero__content {
+    padding:
+      var(--space-xl)
+      var(--space-lg)
+      var(--space-2xl)
+      clamp(2.5rem, 12vw, 9rem);
+  }
+
+  .save-form__fields {
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+  }
+
+  .save-form--hero .save-form__fields {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+
+  .save-form--hero .save-form__label--spacer {
+    display: block;
+    visibility: hidden;
+  }
+
+  .save-form--hero .save-form__fields .btn {
+    width: auto;
+    min-width: 11rem;
+  }
+
+  .save-form__fields .btn {
+    min-width: 11rem;
+  }
+
+  .weekend-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .charges-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .charge-card {
+    padding: var(--space-lg);
+  }
+}
